@@ -1,6 +1,6 @@
 ﻿namespace Managed_Wifi_Hotspot
 {
-    partial class Form1
+    partial class UI
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // UI
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(477, 583);
+            this.MaximizeBox = false;
+            this.Name = "UI";
+            this.Style = MetroFramework.MetroColorStyle.Purple;
+            this.Text = "Managed Wifi Hotspot";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

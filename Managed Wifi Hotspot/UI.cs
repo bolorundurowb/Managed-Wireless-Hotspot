@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace Managed_Wifi_Hotspot
 {
-    public partial class Form1 : Form
+    public partial class UI : MetroForm
     {
-        public Form1()
+        public UI()
         {
             InitializeComponent();
         }
