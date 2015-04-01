@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_stop_ap = new MetroFramework.Controls.MetroButton();
             this.btn_start_ap = new MetroFramework.Controls.MetroButton();
@@ -37,27 +39,29 @@
             this.txt_ap_name = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgv_connected_devices = new System.Windows.Forms.DataGridView();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ip_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.set_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgv_internet_access = new System.Windows.Forms.DataGridView();
             this.access_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.access_ip_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.time_left = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ip_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.set_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nfy_info = new System.Windows.Forms.NotifyIcon(this.components);
             this.err_worker = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_connected_devices)).BeginInit();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_internet_access)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.err_worker)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.btn_stop_ap);
             this.groupBox1.Controls.Add(this.btn_start_ap);
             this.groupBox1.Controls.Add(this.txt_ap_password);
@@ -88,6 +92,7 @@
             this.btn_start_ap.Location = new System.Drawing.Point(8, 102);
             this.btn_start_ap.Name = "btn_start_ap";
             this.btn_start_ap.Size = new System.Drawing.Size(75, 23);
+            this.btn_start_ap.Style = MetroFramework.MetroColorStyle.Teal;
             this.btn_start_ap.TabIndex = 10;
             this.btn_start_ap.Text = "START AP";
             this.btn_start_ap.UseSelectable = true;
@@ -146,6 +151,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.dgv_connected_devices);
             this.groupBox2.Location = new System.Drawing.Point(24, 212);
             this.groupBox2.Name = "groupBox2";
@@ -154,8 +162,57 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Connected Devices";
             // 
+            // dgv_connected_devices
+            // 
+            this.dgv_connected_devices.AllowUserToAddRows = false;
+            this.dgv_connected_devices.AllowUserToDeleteRows = false;
+            this.dgv_connected_devices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_connected_devices.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgv_connected_devices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_connected_devices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.name,
+            this.ip_address,
+            this.set_time});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_connected_devices.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_connected_devices.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_connected_devices.Location = new System.Drawing.Point(3, 16);
+            this.dgv_connected_devices.Name = "dgv_connected_devices";
+            this.dgv_connected_devices.ReadOnly = true;
+            this.dgv_connected_devices.RowHeadersVisible = false;
+            this.dgv_connected_devices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_connected_devices.Size = new System.Drawing.Size(490, 201);
+            this.dgv_connected_devices.TabIndex = 0;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Computer Name";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // ip_address
+            // 
+            this.ip_address.HeaderText = "IP Address";
+            this.ip_address.Name = "ip_address";
+            this.ip_address.ReadOnly = true;
+            // 
+            // set_time
+            // 
+            this.set_time.HeaderText = "Set Time Allowed";
+            this.set_time.Name = "set_time";
+            this.set_time.ReadOnly = true;
+            // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.dgv_internet_access);
             this.groupBox3.Location = new System.Drawing.Point(24, 439);
             this.groupBox3.Name = "groupBox3";
@@ -164,37 +221,31 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Devices with Internet Access";
             // 
-            // dgv_connected_devices
-            // 
-            this.dgv_connected_devices.AllowUserToAddRows = false;
-            this.dgv_connected_devices.AllowUserToDeleteRows = false;
-            this.dgv_connected_devices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_connected_devices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_connected_devices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.name,
-            this.ip_address,
-            this.set_time});
-            this.dgv_connected_devices.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_connected_devices.Location = new System.Drawing.Point(3, 16);
-            this.dgv_connected_devices.Name = "dgv_connected_devices";
-            this.dgv_connected_devices.ReadOnly = true;
-            this.dgv_connected_devices.Size = new System.Drawing.Size(490, 201);
-            this.dgv_connected_devices.TabIndex = 0;
-            // 
             // dgv_internet_access
             // 
             this.dgv_internet_access.AllowUserToAddRows = false;
             this.dgv_internet_access.AllowUserToDeleteRows = false;
             this.dgv_internet_access.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_internet_access.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_internet_access.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_internet_access.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.access_name,
             this.access_ip_address,
             this.time_left});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkMagenta;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_internet_access.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_internet_access.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_internet_access.Location = new System.Drawing.Point(3, 16);
             this.dgv_internet_access.Name = "dgv_internet_access";
             this.dgv_internet_access.ReadOnly = true;
+            this.dgv_internet_access.RowHeadersVisible = false;
+            this.dgv_internet_access.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_internet_access.Size = new System.Drawing.Size(490, 201);
             this.dgv_internet_access.TabIndex = 0;
             // 
@@ -215,24 +266,6 @@
             this.time_left.HeaderText = "Time Left";
             this.time_left.Name = "time_left";
             this.time_left.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Computer Name";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // ip_address
-            // 
-            this.ip_address.HeaderText = "IP Address";
-            this.ip_address.Name = "ip_address";
-            this.ip_address.ReadOnly = true;
-            // 
-            // set_time
-            // 
-            this.set_time.HeaderText = "Set Time Allowed";
-            this.set_time.Name = "set_time";
-            this.set_time.ReadOnly = true;
             // 
             // nfy_info
             // 
@@ -259,8 +292,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_connected_devices)).EndInit();
+            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_internet_access)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.err_worker)).EndInit();
             this.ResumeLayout(false);
